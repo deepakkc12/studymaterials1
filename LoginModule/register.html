@@ -3,13 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login module</title>
+    <style>
+        body{
+            background-image: url(bgimg.jpg);
+            background-size: 100%;
+        }
+        div{
+            color: rgb(237, 230, 230);
+            width: 600px;
+            height: 800px;
+            margin: auto;
+            background-color:rgb(19, 15, 47) ;
+            opacity: 0.8;
+            border-radius: 50px;
+        }
+        .name{
+            text-align: left;
+            font-size:medium;
+            border-radius: 20px;
+        }
+        .name::placeholder{
+            color: black;
+            font-weight:250px;
+            padding-left: 20px;
+            font-size: 15px;
+        }
+        .country{
+            color: black;
+        
+        }
+        .cntry{
+            color: black;
+            opacity: 100;
+            font-weight: bold;
+            border-radius: 30px;
+            border-color: rgb(95, 107, 11);
+            text-align: center;
+            background-color:#D3D3D3 ;
+        }
+        .regbutton{
+            width:100px;
+            color: rgb(22, 35, 22);
+            background-color: rgb(29, 237, 21);
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: large;
+            border-color: rgb(15, 14, 22);
+        }
+        .adress{
+            background-color: #D3D3D3;
+        }
+    </style>
 </head>
 <body>
     <div>
-        <table>
+        <table align="center" cellpadding="10" cellspacing="10">
             <tr>
-                
+                <td align="center">
+                    <h2>Customer Registration</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" placeholder="first name" class="name" align="left">
+                    <input type="text" placeholder="second name" class="name" align="right">
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <b>Gender :</b>
+                    <input type="radio" name="gender" value="male" class="gender"> <b>Male</b>
+                    <input type="radio" name="gender" value="female"  class="gender"> <b>Female</b>
+                    <input type="radio" name="gender" value="other"  class="gender"> <b>other</b>
+                </td>
+            </tr>
+            <tr>
+               <td align="center">
+                <input type="number" placeholder="enter mobile number" class="name">
+                <input type="email" placeholder="enter email" class="name">
+               </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <input type="password" placeholder="enter password" class="name">
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+
+                    <input type="password" placeholder="confirm password" class="name">
+                </td>
+            </tr> 
+            <tr>
+                <td align="left">
+                    <label for="Adress"><b>Adress</b></label>
+                    <textarea name="Adress" id="Adress" cols="30" rows="5" class="adress"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <label for="country"><b>Select your country:</b></label>
+                    <select id="country" name="country" class="cntry">
+                        <option value="ind" class="country"><b>India</b></option>
+                        <option value="usa" class="country"><b>United States</b></option>
+                        <option value="canada" class="country"><b>Canada</b></option>
+                        <option value="uk" class="country"><b>United Kingdom</b></option>
+                        <option value="aus" class="country"><b>Australia</b></option>
+                        <option value="nz" class="country"><b>Newzeland</b></option>
+                        <option value="sl" class="country"><b>Sri Lanka</b></option>
+                        <option value="pak" class="country"><b>Pakistan</b></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <p style="font-size: large;"><b>Select your known languages</b></p>
+                    <b>English</b><input type="checkbox" name="language" id="eng">
+                    <b>Hindi</b><input type="checkbox" name="language" id="hin"><br><br>
+                    <b>Malayalam</b><input type="checkbox" name="language" id="mal">
+                    <b>Other</b><input type="checkbox" name="language" id="oth">
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <input type="button" value="register" class="regbutton">
+                </td>
+            </tr>
+            <tr>
+                <td align="center" >
+                    Already registered? <a href="login.html" style="color: rgb(29, 237, 21);" ><b>Login</b></a>
+                </td>
             </tr>
         </table>
     </div>

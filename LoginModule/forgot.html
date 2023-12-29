@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(bgimg.jpg);
+        }
+         div{
+            color: rgb(254, 253, 253);
+            background-color: rgb(19, 15, 47);
+            width: 350px;
+            height: 450px;
+            margin: 200px auto auto auto;
+            border-radius: 30px;
+            /* background-image: url(bgimg.jpg); */
+            background-size: 100%;
+            opacity: 0.8;
+        }
+        .inp{
+            width: 250px; 
+            text-align: left;
+            border-color: rgb(49, 29, 46);
+            border-radius: 10px;
+            font-size: large;
+        }
+        .inp::placeholder {
+            color: black;
+            font-weight:250px;
+            padding-left: 20px;
+            font-size: 15px;
+        }
+        .but{
+            color: rgb(23, 32, 23);
+            background-color: rgb(15, 254, 75);
+            border-radius: 10px;
+            width:170px;
+            font-weight: bold;
+            font-size: medium;
+            border-color: rgb(15, 14, 22);
+        }
+        a {
+             margin-right: 20px;
+             color: rgb(29, 237, 21);
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <table align="center" cellspacing="10" cellpadding="10">
+            <tr>
+                <td align="center"><h2><b>Recover your password</b></h2></td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <p ><b>enter your registered email</b></p>
+                    <input type="text" placeholder="email" class="inp"><br>
+                    <p style="font-size: 18px;font-weight: bold;">OR</p>
+                    <p><b>enter your registered mobile number</b></p>
+                    <input type="number" placeholder="number" class="inp">
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <input type="button" value="recover password" class="but">
+                </td>
+            </tr>
+            <tr>
+               <td align="right">
+                <a href="login.html"><b>login</b></a>
+                <a href="register.html"><b>register</b></a>
+               </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
