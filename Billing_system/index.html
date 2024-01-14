@@ -58,7 +58,7 @@
         var value=document.getElementById("pdt").value;
         // document.getElementById("test").innerHTML=value;
         for(let i=0;i<10;i++){
-            if(value==product[i][0]){
+            if(value===product[i][0]){
                 flag=1;
                 document.getElementById("spdt").innerHTML=product[i][0];
                 document.getElementById("sprice").innerHTML=product[i][1];
@@ -80,7 +80,6 @@
     var wholeTot=0;
      function additem(){
         if(flag==1){
-            
         var sq=document.getElementById("sqty").value;
         var balance=product[index][2]-sq;
         var avbt= product[index][2];
@@ -147,28 +146,34 @@
 
             var table = document.getElementById('billtable');
 
+            var Q=parseInt(row.getElementsByTagName('td')[1].innerHTML);
+            // alert(i);
+
+            var i=findIndex(row);
+            
+            var preAvbt=product[i][2];
+
             table.deleteRow(row.rowIndex);
 
-            wholeTot=wholeTot-colm
+            wholeTot=wholeTot-colm;
 
             document.getElementById("tam").innerHTML=wholeTot;
 
-            var i=findIndex(row);
-
-            var preAvbt=parseInt(document.getElementById("avbt").innerHTML);
-            // alert(preAvbt)
-            var Q=parseInt(row.getElementsByTagName('td')[1].innerHTML);
-
             var newAvbt=preAvbt+Q;
+
+            var name=document.getElementById("spdt").innerHTML;
 
             product[i][2]=newAvbt;
 
-            document.getElementById("avbt").innerHTML=product[i][2];
+            // alert("hi");
+            if(product[i][0]==name){               
+                document.getElementById("avbt").innerHTML=product[i][2]+" items";
+            }
         }
 
         function findIndex(Row){
             var pdtName=Row.getElementsByTagName('td')[2].innerHTML;
-            for(let i=0; i<product.length; i){
+            for(let i=0; i<product.length; i++){
                 if(pdtName==product[i][0]){
                     return i;
                 }
@@ -195,7 +200,6 @@
     // Save the PDF
     doc.save("table.pdf");
   }
-
-</script>
+  </script>
 </body>
 </html>
