@@ -20,7 +20,7 @@
         <p>find product</p>
         <input type="text" id="pdt" onchange="searchPdt()" class="ip">
         <p id="test">Product:<span id="spdt"></span><br><br>
-            Price:<span id="sprice"></span><span id="availability">availabile: <span id="avbt"></span></span>
+            Price:<span id="sprice"></span><br><br>Availabile: <span id="avbt"></span>
         </p>
         <!-- <button id="flag" onclick="showflag()">flag test</button><span id="fg"></span> -->
         <h4 style="margin-top: 5px;">Qty</h4>
@@ -62,7 +62,7 @@
                 flag=1;
                 document.getElementById("spdt").innerHTML=product[i][0];
                 document.getElementById("sprice").innerHTML=product[i][1];
-                document.getElementById("avbt").innerHTML=product[i][2];
+                document.getElementById("avbt").innerHTML=product[i][2]+' items';
                 index=i;
                 //alert(index)
                 break;
@@ -88,7 +88,7 @@
 
             product[index][2]=balance;
 
-            document.getElementById("avbt").innerHTML=balance;
+            document.getElementById("avbt").innerHTML=balance +' items';
 
             var sprc=document.getElementById("sprice").innerHTML;
 
@@ -129,11 +129,15 @@
             document.getElementById("tam").innerHTML=wholeTot;
 
         }   
-        else if(balance<0){
-            document.getElementById("avbt").innerHTML="out of stock!"
+        else if (balance<0 && product[index][2]>0){
+            document.getElementById("avbt").innerHTML= product[index][2]+' items only!!';
+        }
+        else if(balance<0 ){
+            document.getElementById("avbt").innerHTML=0 + "ut of stock!";
         }
 
         }
+       
      }
         function remove(btn) {
 
@@ -149,17 +153,27 @@
 
             document.getElementById("tam").innerHTML=wholeTot;
 
-            var preAvbt=parseInt(document.getElementById("avbt").innerHTML);
+            var i=findIndex(row);
 
+            var preAvbt=parseInt(document.getElementById("avbt").innerHTML);
+            // alert(preAvbt)
             var Q=parseInt(row.getElementsByTagName('td')[1].innerHTML);
 
+            var newAvbt=preAvbt+Q;
 
-            document.getElementById("avbt").innerHTML=preAvbt+Q;
+            product[i][2]=newAvbt;
+
+            document.getElementById("avbt").innerHTML=product[i][2];
         }
 
-
-
-
+        function findIndex(Row){
+            var pdtName=Row.getElementsByTagName('td')[2].innerHTML;
+            for(let i=0; i<product.length; i){
+                if(pdtName==product[i][0]){
+                    return i;
+                }
+            }
+        }
 
 
 

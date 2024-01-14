@@ -61,10 +61,8 @@ tr{
 }
 .productSearch p span{
     font-family:Georgia, 'Times New Roman', Times, serif!important;
-}
-#availability{
-    font-family: 'Courier New', Courier, monospace!important;
-    padding-left: 30px;
+    margin: 0px;
+    padding: 0px;
 }
 #sadd{
     margin-right: 0px;
