@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tea_Flower</title>
+    <script src="https://kit.fontawesome.com/69fe2f9c0d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="header">
+            <h1>Flower Tea</h1>
+            <div>
+            <a href="#"><span class="material-symbols-outlined">construction</span></a>               
+            <a href="#"><span class="material-symbols-outlined">school</span></a>
+            <a href="#"><span class="material-symbols-outlined">shopping_cart</span></a>
+            </div>                             
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><a href="#">Link1</a></li>
+                <li><a href="#">Link2</a></li>
+                <li><a href="#">Link3</a></li>
+            </ul>
+        </div>
+        <div class="contents">
+            <div class="one">
+                <a href="#">Drink Tea & <br> Enjoy</a>
+            </div>
+            <div class="two"></div>
+            <div class="three">
+                <a href="#">Smell Flowers & <br> Enjoy</a>
+            </div>
+            <div class="four"></div>
+            <div class="five">
+                <a href="#">How To Live & <br> Enjoy Life</a>
+            </div>
+            <div class="six"></div>
+            <div><button id="changeButton" onclick="changeImage()">click to change the images</button></div>
+        </div>
+    </div>
+    <div class="why_we_use">
+        <h1>Why do we use it</h1>
+        <p style="margin-top: 0px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy 
+            text ever since the 1500s, when an unknown printer took a gall ey of type and scrambled it to make a type specimen book. It 
+            has survived not only five centuries</p>
+        <button class="read_more">Read more</button>
+    </div>
+    <div style="height: 450px;">
+        <h1 style="text-align: center; margin-bottom: 40px;">What we do</h1>
+    <div class="what_to_do">
+        <div>
+            <h1 style="margin-bottom: 5px;"><span class="material-symbols-outlined">potted_plant</span></h1>
+            <h2 style="margin-top: 0px;">Loream Ipsum</h2>
+            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text</p>
+            <button class="read_more">Read more</button>
+
+        </div>
+        <div>
+            <h1 style="margin-bottom: 5px;"><span class="material-symbols-outlined">emoji_food_beverage</span></h1>
+            <h2 style="margin-top: 0px;">Loream Ipsum</h2>
+            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text</p>
+            <button class="read_more">Read more</button>
+        </div>
+        <div>
+            <h1 style="margin-bottom: 5px;"><span class="material-symbols-outlined">diversity_1</span></h1>
+            <h2 style="margin-top: 0px;">Loream Ipsum</h2>
+            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text</p>
+            <button class="read_more">Read more</button>
+        </div>
+    </div>
+    </div>
+    <div class="fixedimage">
+        <h1>There are many variations of passages of Lorem Ipsum available?</h1>
+        <button class="big_read_more"><a href="#">READ MORE</a></button>
+    </div>
+    <div class="after">
+        <h1>Choose your cup of tea</h1>
+        <div class="image_gallery">
+            <div class="first"></div>
+            <div class="second"></div>
+            <div class="third"></div>
+            <div class="fourth"></div>
+            <div class="fifth"></div>
+            <div class="sixth"></div>
+            <div class="seven"></div>
+            <div class="eight"></div>
+        </div>
+    </div>
+    <div class="more1">
+        <h1><i class="fa-solid fa-comment"></i></h1>
+        <p style="margin-top: 40px;">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots 
+            in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
+            Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked 
+            up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage</p>
+    </div>
+    <div class="more2">
+        <div class="anna1">
+            <img src="images/people/anna1.jpeg" alt="">
+            <h1>Anna Doe</h1>
+            <p>There are many variations of passages of Lorem Ipsum available</p>
+        </div>
+        <div class="anna2">
+            <img src="images/people/anna2.jpeg" alt="">
+            <h1>Anna Doe</h1>
+            <p>There are many variations of passages of Lorem Ipsum available</p>
+        </div>
+        <div class="anna3">
+            <img src="images/people/anna3.jpeg" alt="">
+            <h1>Anna Doe</h1>
+            <p>There are many variations of passages of Lorem Ipsum available</p>
+        </div>
+    </div>
+    <div class="more3">
+        <h1>Subscribe to get more info</h1>
+        <p>It is a long established fact that a reader</p>
+        <input type="text">
+        <input type="text">
+        <button class="read_more">Read more</button>
+    </div>
+    <div class="footer">
+        <p>HTML & CSS template is done by Deepak k c. <br><br> Job suggestion: deepakkc8086@gmail.com</p>
+    </div>
+    <script>
+        var y=1;
+function changeImage(){
+    var x=["url('images/3.jpeg')","url('images/2.jpeg')","url('images/1.jpeg')","url('images/cup/first.jpeg' )","url('images/cup/second.jpeg' )"]
+   for(let i=0,y=0;i<6;i++){
+    var rndInt = Math.floor(Math.random() *4) + 1;
+    if(i==1){
+        const element=document.querySelectorAll(".contents div")[i];
+        element.style.backgroundImage=x[rndInt]
+    }
+    else if(i==3){
+        const element=document.querySelectorAll(".contents div")[i];
+        element.style.backgroundImage=x[rndInt]
+    }
+    else if(i==5){
+        const element=document.querySelectorAll(".contents div")[i];
+        element.style.backgroundImage=x[rndInt]
+    }
+   }
+}
+</script>
+</body>
+</html>
