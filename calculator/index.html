@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 style="color: black;"> Calculator</h1>
+    <div class="container">
+        <div class="display"><textarea id="operation" cols="30" rows="10"></textarea>
+        <p id="result"></p>
+        </div>
+        <div class="btn"><h1 onclick="writ(this)">1</h1></div>
+        <div class="btn"><h1 onclick="writ(this)">2</h1></div>
+        <div class="btn"><h1 onclick="writ(this)">3</h1></div>
+        <div class="btn"><h1 onclick="writ(this)">+</h1></div>
+        <div class="btn"><h1 onclick="writ(this)">4</h1></div>
+        <div class="btn"><h1 onclick="writ(this)">5</h1></div>
+        <div class="btn"><h1 onclick="writ(this)">6</h1></div>
+        <div class="btn"><h1 onclick="writ(this)">-</h1></div>
+        <div class="btn"><h1 onclick="writ(this)">7</h1></div>
+        <div class="btn"><h1 onclick="writ(this)">8</h1></div>
+        <div class="btn"><h1 onclick="writ(this)">9</h1></div>
+        <div class="btn"><h1 onclick="writ(this)">*</h1></div>
+        <div class="btn"><h1 onclick="writ(this)">0</h1></div>
+        <div class="btn"><h1 onclick="clr()">C</h1></div>
+        <div class="btn"><h1 onclick="result()">=</h1></div>
+        <div class="btn"><h1 onclick="writ(this)">/</h1></div> 
+    </div>
+    <script>
+        function writ(element){
+            var nmber=element.innerHTML;
+            document.getElementById("operation").value+=nmber;
+        }
+         function result(element){
+            var operation=document.getElementById("operation").value;
+            var flag=isEvaluableExpression(operation);
+            if(flag){
+                let rst=eval(operation);
+                document.getElementById("result").innerHTML=rst;
+            }
+            else{
+                document.getElementById("result").innerHTML="syntaxError"
+            }        
+        }
+        function clr(){
+            document.getElementById("operation").value="";
+            if(document.getElementById("result").innerHTML=="syntaxError")
+                document.getElementById("result").innerHTML="";
+        }
+
+        function isEvaluableExpression(str) {
+        try {
+            eval(str);
+            return true; // No syntax error, the string is evaluable
+        } catch (e) {
+            if (e instanceof SyntaxError) {
+                return false; // Syntax error, the string is not evaluable
+            } else {
+                throw e; // Some other error occurred
+            }
+        }
+        }
+    </script>
+</body>
+</html>
