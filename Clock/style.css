@@ -1,0 +1,87 @@
+h1{
+    margin-top: 40px;
+    font-size: 50px;
+    text-align: center;
+    font-family: fantasy;
+    color: rgb(255, 0, 0);
+}
+body{
+    background-color: rgb(26, 23, 23);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    letter-spacing: 5px;
+}
+.clock{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin: auto;
+    background-color: #ffff00;
+    border: black solid 2px;
+    position: relative;
+    margin-top: 30px;
+}
+.stand{
+    
+    position: relative;
+    background-color: rgb(255, 0, 0);
+    width: 40px;
+    height: 70px;
+    border-radius: 10px;
+    margin: auto;
+    top: -10px;
+    z-index: -1;
+}
+.min{
+    height: 2px;
+    background-color: rgb(255, 0, 0);
+    width: 130px;
+    position: absolute;
+    top:150px;
+    left: 145px;
+    /* transform: rotate(-90deg); */
+    transform-origin:  5px 50%;
+    transition: all ease-in-out;
+}
+.hour{
+    height: 5px;
+    background-color: rgb(2, 78, 126);
+    width: 100px;
+    position: absolute;
+    top:149px;
+    left: 145px;
+    /* transform: rotate(-90deg); */
+    transform-origin:  5px 50%;
+
+}
+.hour1{
+    height: 7px;
+    background-color: rgb(2, 78, 126);
+    width: 80px;
+    position: absolute;
+    top:148px;
+    left: 145px;
+    /* transform: rotate(-90deg); */
+    transform-origin:  5px 50%;
+
+}
+.mark{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 7px;
+    height: 2px;
+    background-color: rgb(0, 0, 0);
+}
+.cntr{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgb(0, 0, 0);
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
