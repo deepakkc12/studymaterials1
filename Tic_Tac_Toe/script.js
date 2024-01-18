@@ -94,7 +94,7 @@ function place(element){
          won=true;
         }
      }
-     else if(child[2].innerHTML==child[5].innerHTML && child[5].innerHTML==child[8].innerHTML&&child[2]=="x"){
+     else if(child[2].innerHTML==child[5].innerHTML && child[5].innerHTML==child[8].innerHTML){
         if(child[2].innerHTML=="x"){
          document.getElementById("wonStatus").innerHTML="player <span class='xspan'>X</span> won!!";
          won=true;
@@ -147,7 +147,7 @@ function place(element){
             fill=true;
         }
     }
-    if(fill){
+    if(fill && !won){
         for(i=0;i<div_childrens.length;i++){
             div_childrens[i].removeEventListener('click',eventRmv);
         }
