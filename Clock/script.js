@@ -61,9 +61,9 @@
                     })
                }
         // making hours hand rotating...................................
-               var hr_position=nowHour*30-90;
+               var hr_position=nowHour*30-90+(30*(nowMinute/60));
                function hour(){
-                hr_position+=0.1;
+                hr_position+=0.5;
                 $('.hour1').css({
                     'transform':`rotate(${hr_position}deg)`
                 })
